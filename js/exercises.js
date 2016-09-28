@@ -10,10 +10,11 @@
   // ---------------------
 
   function max(num1, num2){
-    var max = Math.max(num1, num2);
-    return max;
       "use strict";
-      //...
+
+    var max = Math.max(num1, num2);
+
+    return max;
   }
 
   console.assert(max(10, 1) == 10);
@@ -24,10 +25,12 @@
   // ---------------------
 
   function maxOfThree(num1, num2, num3){
+    "use strict";
+
     var max = Math.max(num1, num2, num3);
+
     return max;
-      "use strict";
-      //...
+
   }
 
   console.assert(maxOfThree(1, 14, -20) == 14);
@@ -38,15 +41,16 @@
   // ---------------------
 
   function isVowel(char){
+    "use strict";
+
     var outcome;
-    if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u' ) {
+
+    if(char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u') {
       outcome = true;
     } else {
       outcome = false;
     }
     return outcome;
-      "use strict";
-      //...
   }
 
   console.assert(isVowel('a') == true);
@@ -57,8 +61,11 @@
   // ---------------------
 
   function rovarspraket(phrase){
+    "use strict";
+
     var textPhrase = phrase;
     var newPhrase = "";
+
     for (var i = 0; i < textPhrase.length; i++){
       var char = textPhrase[i];
 
@@ -68,17 +75,8 @@
         newPhrase += char + "o" + char;
       }
 
-      // //console.log(textPhrase[i]);
-      // var consonant = textPhrase.charAt(i);
-      // if(vowels.indexOf(consonant) != -1){
-      //   newPhrase = (newPhrase + (consonant));
-      // } else {
-      //   newPhrase = (newPhrase + (consonant + "o" + consonant));
-      // }
     }
       return newPhrase;
-      "use strict";
-      //...
   }
 
   console.assert(rovarspraket('this is fun') == 'tothohisos isos fofunon');
@@ -92,26 +90,29 @@
   var numArr1 = [8, 8, 8, 8, 1, 3];
 
   function sum(array){
+    "use strict";
+
     var total = 0;
+
     for(var i = 0; i < array.length; i++){
       total += array[i];
     }
     return total;
-      "use strict";
-      //...
   }
 
   console.assert(sum(numArr) == 14);
   console.assert(sum(numArr1) == 36);
 
   function multiply(array){
+    "use strict";
+
     var total = 1;
+
     for (var i = 0; i < array.length; i++){
       total = total * array[i];
     }
     return total;
       "use strict";
-      //...
   }
 
   console.assert(multiply(numArr) == 63);
@@ -122,9 +123,9 @@
   // ---------------------
 
   function reverse(phrase){
+    "use strict";
+
     return phrase.split('').reverse().join('');
-      "use strict";
-      //...
   }
 
   console.assert(reverse('can we flip this') == 'siht pilf ew nac');
@@ -135,15 +136,16 @@
   // ---------------------
 
   function findLongestWord(words){
+    "use strict";
+
     var strings = words;
     var longest = 0;
+
     for(var i = 0; i < strings.length; i++)
       if (strings[i].length > longest) {
-      longest = strings[i].length;
-      }
+        longest = strings[i].length;
+        }
       return longest;
-      "use strict";
-      //...
   }
 
   var array = ['one', 'five', 'greater', 'stadium'];
@@ -168,7 +170,6 @@
         longWords.push(strings[i])
       }
     }
-
     return longWords;
   }
 
@@ -181,7 +182,22 @@
 
   function charFreq(string){
       "use strict";
-      //...
+
+      var freq = {};
+
+      for(var i = 0; i < string.length; i++) {
+          var character = string.charAt(i);
+          if (freq[character]) {
+             freq[character]++;
+          } else {
+             freq[character] = 1;
+          }
+      }
+      return freq;
   }
+
+  // This is my console.log() instead of console.assert() because I did not
+  // know how to format the 'thruhy' statement.
+  console.log(charFreq('abbabcbdbabdbdbabababcbcbab'));
 
 }());
